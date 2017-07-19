@@ -45,11 +45,14 @@ class ProxyCrawl(object):
             proxylist = sqlhelper.select()
 
             spawns = []
-            for proxy in proxylist:
+            proxy_sum = len(proxylist)
+            for i,proxy in enumerate(proxylist):
                 spawns.append(gevent.spawn(detect_from_db, self.myip, proxy, self.proxies))
                 if len(spawns) >= MAX_CHECK_CONCURRENT_PER_PROCESS:
                     gevent.joinall(spawns)
                     spawns= []
+                str = 'Loading [%d/%d]\r'%(i+1,proxy_sum)
+                sys.stdout.write(str + "\r")
             gevent.joinall(spawns)
             self.db_proxy_num.value = len(self.proxies)
             str = 'IPProxyPool----->>>>>>>>db exists ip:%d' % len(self.proxies)

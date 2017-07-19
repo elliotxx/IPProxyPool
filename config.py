@@ -116,14 +116,15 @@ CHINA_AREA = ['河北', '山东', '辽宁', '黑龙江', '吉林'
               '台湾', '海南', '山西', '四川', '陕西',
               '贵州', '安徽', '重庆', '北京', '上海', '天津', '广西', '内蒙', '西藏', '新疆', '宁夏', '香港', '澳门']
 QQWRY_PATH = os.path.dirname(__file__) + "/data/qqwry.dat"
+#THREADNUM = 5
 THREADNUM = 5
 API_PORT = 8000
 '''
 爬虫爬取和检测ip的设置条件
 不需要检测ip是否已经存在，因为会定时清理
 '''
-UPDATE_TIME = 30 * 60  # 每半个小时检测一次是否有代理ip失效
-MINNUM = 50  # 当有效的ip值小于一个时 需要启动爬虫进行爬取
+UPDATE_TIME = 15 * 60  # 每半个小时检测一次是否有代理ip失效
+MINNUM = 5000  # 当有效的ip值小于一个时 需要启动爬虫进行爬取
 
 TIMEOUT = 5  # socket延时
 '''
@@ -204,5 +205,6 @@ CHECK_PROXY={'function':'checkProxy'}#{'function':'baidu_check'}
 MAX_CHECK_PROCESS = 2 # CHECK_PROXY最大进程数
 MAX_CHECK_CONCURRENT_PER_PROCESS = 30 # CHECK_PROXY时每个进程的最大并发
 TASK_QUEUE_SIZE = 50 # 任务队列SIZE
-MAX_DOWNLOAD_CONCURRENT = 3 # 从免费代理网站下载时的最大并发 
+#MAX_DOWNLOAD_CONCURRENT = 3 # 从免费代理网站下载时的最大并发
+MAX_DOWNLOAD_CONCURRENT = 10 # 从免费代理网站下载时的最大并发
 CHECK_WATI_TIME = 1#进程数达到上限时的等待时间
