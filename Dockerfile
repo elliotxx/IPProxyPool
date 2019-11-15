@@ -24,6 +24,9 @@ RUN pip install \
     -i https://pypi.doubanio.com/simple --trusted-host=pypi.douban.com/simple \
     -r requirements.txt
 
+# 设置 API_SERVER 端口
+ENV IPPROXYPOOL_API_PORT=80
+
 # 暴露的端口
 EXPOSE 80
 

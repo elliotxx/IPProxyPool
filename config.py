@@ -118,7 +118,8 @@ CHINA_AREA = ['河北', '山东', '辽宁', '黑龙江', '吉林'
 QQWRY_PATH = os.path.dirname(__file__) + "/data/qqwry.dat"
 #THREADNUM = 5
 THREADNUM = 5
-API_PORT = 8000
+# API_PORT = 8000
+API_PORT = 8000 if os.getenv("IPPROXYPOOL_API_PORT") == "" else int(os.getenv("IPPROXYPOOL_API_PORT"))
 '''
 爬虫爬取和检测ip的设置条件
 不需要检测ip是否已经存在，因为会定时清理
