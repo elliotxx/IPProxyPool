@@ -10,7 +10,7 @@ API_PORT = 8000 if os.getenv("IPPROXYPOOL_API_PORT") == "" else int(os.getenv("I
 ## use with Docker
 拉取镜像
 ```
-
+docker pull registry.cn-shanghai.aliyuncs.com/elliotxx/ipproxy
 ```
 启动镜像(映射到主机8010端口)
 ```
