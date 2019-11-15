@@ -14,7 +14,7 @@ docker pull registry.cn-shanghai.aliyuncs.com/elliotxx/ipproxy
 ```
 启动镜像(映射到主机8010端口)
 ```
-docker run -d --name ipproxy -p 8010:80 -v $PWD/docker_data:/root/IPProxyPool/data ipproxy
+docker run -d --name ipproxy -p 8010:80 -v $PWD/docker_data:/root/IPProxyPool/data registry.cn-shanghai.aliyuncs.com/elliotxx/ipproxy
 ```
 本地构建镜像
 ```
