@@ -31,12 +31,12 @@ def store_data(queue2, db_proxy_num):
             proxy = queue2.get(timeout=300)
 
             # from windcode
-            if proxy['protocol']==0:
-                # http协议的代理ip不插入数据库
-                str = 'IPProxyPool----->>>>>>>>Ignore http proxy ip:%s' %(proxy['ip'])
-                sys.stdout.write(str + "\r")
-                sys.stdout.flush()
-                continue
+            #if proxy['protocol']==0:
+            #    # http协议的代理ip不插入数据库
+            #    str = 'IPProxyPool----->>>>>>>>Ignore http proxy ip:%s' %(proxy['ip'])
+            #    sys.stdout.write(str + "\r")
+            #    sys.stdout.flush()
+            #    continue
 
             if proxy:
 
